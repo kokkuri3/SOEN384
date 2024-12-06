@@ -77,3 +77,11 @@ with open("analysis_results.txt", "w") as f:
 for tag, results in top_methods.items():
     for metric, data in results.items():
         data.to_csv(f"{tag}_top5_{metric}.csv", index=False)
+
+# Step 7: Compute the number of classes for each type and save to a separate file
+def compute_class_type_counts(df, tag):
+    class_type_counts = df[df['Kind'].isin(['Private Class', 'Public Class'])]['Kind'].value_counts()
+    class_type_counts.to_csv(f"{tag}_class_type_counts.csv", header=["Count"])
+
+for tag, df in filtered_data.items():
+    compute_class_type_counts(df, tag)
