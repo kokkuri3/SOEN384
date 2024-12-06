@@ -21,7 +21,12 @@ def compute_counts(df):
 
 counts = {tag: compute_counts(filtered_data[tag]) for tag in tags}
 
-# Step 4: Analyze metrics and generate box plots
+# Step 4: Save the class and method counts to CSV files
+for tag, (class_counts, method_counts) in counts.items():
+    class_counts.to_csv(f"{tag}_class_counts.csv", header=["Count"])
+    method_counts.to_csv(f"{tag}_method_counts.csv", header=["Count"])
+
+# Step 5: Analyze metrics and generate box plots
 metrics = ["SumCyclomatic", "AvgEssential", "MaxInheritanceTree", "PercentLackOfCohesion",
            "CountClassDerived", "CountClassCoupled", "CountDeclMethod", "Essential", "CountLineCode"]
 
@@ -53,7 +58,7 @@ for tag, df in filtered_data.items():
         if metric in df.columns:
             plot_boxplot(df, tag, metric, ['Private Method', 'Public Method', 'Protected Method'])
 
-# Step 5: Identify top 5 methods with the highest SLOC and complexity values
+# Step 6: Identify top 5 methods with the highest SLOC and complexity values
 def top_5_methods(df, tag):
     results = {}
     for metric in ["CountLineCode", "SumCyclomatic"]:
@@ -64,7 +69,7 @@ def top_5_methods(df, tag):
 
 top_methods = {tag: top_5_methods(filtered_data[tag], tag) for tag in tags}
 
-# Step 6: Save the filtered data and analysis results
+# Step 7: Save the filtered data and analysis results
 for tag, df in filtered_data.items():
     df.to_csv(f"{tag}_filtered.csv", index=False)
 
@@ -77,11 +82,3 @@ with open("analysis_results.txt", "w") as f:
 for tag, results in top_methods.items():
     for metric, data in results.items():
         data.to_csv(f"{tag}_top5_{metric}.csv", index=False)
-
-# Step 7: Compute the number of classes for each type and save to a separate file
-def compute_class_type_counts(df, tag):
-    class_type_counts = df[df['Kind'].isin(['Private Class', 'Public Class'])]['Kind'].value_counts()
-    class_type_counts.to_csv(f"{tag}_class_type_counts.csv", header=["Count"])
-
-for tag, df in filtered_data.items():
-    compute_class_type_counts(df, tag)
