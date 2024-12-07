@@ -1,0 +1,6 @@
+Name,SumCyclomatic
+org.junit.jupiter.api.Assertions,292
+org.junit.platform.commons.util.ReflectionUtils,207
+org.junit.platform.commons.util.AnnotationUtils,61
+org.junit.platform.suite.commons.SuiteLauncherDiscoveryRequestBuilder,52
+org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor,50
