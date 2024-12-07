@@ -1,0 +1,6 @@
+Name,CountLineCode
+org.junit.jupiter.api.Assertions,1024.0
+org.junit.platform.commons.util.ReflectionUtils,975.0
+org.junit.platform.engine.support.store.NamespacedHierarchicalStoreTests,398.0
+org.junit.jupiter.params.aggregator.AggregatorIntegrationTests,289.0
+org.junit.platform.engine.discovery.DiscoverySelectors,275.0

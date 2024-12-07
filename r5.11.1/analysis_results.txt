@@ -1,0 +1,11 @@
+
+--- Analysis for r5.11.1 ---
+SumCyclomatic: {'median': np.float64(1.0), '50_percent_range': (np.float64(1.0), np.float64(2.0)), 'min': np.int64(0), 'max': np.int64(292)}
+AvgEssential: {'median': np.float64(1.0), '50_percent_range': (np.float64(1.0), np.float64(1.0)), 'min': np.float64(0.0), 'max': np.float64(5.0)}
+MaxInheritanceTree: {'median': np.float64(1.0), '50_percent_range': (np.float64(1.0), np.float64(1.0)), 'min': np.float64(1.0), 'max': np.float64(5.0)}
+PercentLackOfCohesion: {'median': np.float64(0.0), '50_percent_range': (np.float64(0.0), np.float64(40.0)), 'min': np.float64(0.0), 'max': np.float64(100.0)}
+CountClassDerived: {'median': np.float64(0.0), '50_percent_range': (np.float64(0.0), np.float64(0.0)), 'min': np.float64(0.0), 'max': np.float64(14.0)}
+CountClassCoupled: {'median': np.float64(5.0), '50_percent_range': (np.float64(2.0), np.float64(11.0)), 'min': np.float64(0.0), 'max': np.float64(54.0)}
+CountDeclMethod: {'median': np.float64(2.0), '50_percent_range': (np.float64(1.0), np.float64(7.0)), 'min': np.float64(0.0), 'max': np.float64(292.0)}
+Essential: {'median': np.float64(1.0), '50_percent_range': (np.float64(1.0), np.float64(1.0)), 'min': np.float64(1.0), 'max': np.float64(13.0)}
+CountLineCode: {'median': np.float64(4.0), '50_percent_range': (np.float64(3.0), np.float64(7.0)), 'min': np.float64(0.0), 'max': np.float64(1024.0)}
